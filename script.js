@@ -37,13 +37,10 @@ let count= 0;
 let price=0;
 for(let seat of seats){
     
-            
+    seat.addEventListener('click',seatClick)        
     
-    seat.addEventListener('click', function(){
-        count +=1;
-
-
-        
+    function seatClick(){
+        count +=1;  
         
         if(count<=4){
             price+=550;
@@ -60,6 +57,7 @@ for(let seat of seats){
 
             let tr=document.createElement('tr');
             let td1=document.createElement('td');
+            td1.classList.add('same')
             td1.innerText=seat.innerText;
             let td2=document.createElement('td');
             td2.innerText='Economey'
@@ -72,10 +70,18 @@ for(let seat of seats){
             tr.appendChild(td3);
             tbody.appendChild(tr);
 
+            // td1.classList.add('same')
+            
+            
+
         }
-        return
+
+        seat.disabled=true;
+        seat.removeEventListener('click', seatClick)
+
+        return;
         
-    })
+    }
 }
 
 
@@ -105,8 +111,3 @@ apply.addEventListener('click', function(){
         alert('Invalid cupon')
     }
 })
-
-
-//     const cupon =getTextElementValueById('cupon');
-//     console.log(grandTotal)
-
