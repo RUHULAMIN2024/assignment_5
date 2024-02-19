@@ -5,8 +5,8 @@ function setBackgroundColorById(elementId){
 
 
 
-function getTextElementValueById(elementId){
-    const value = parseInt(document.getElementById(elementId).innerText);
+function getElementValueById(elementId){
+    const value =document.getElementById(elementId).value;
     return value;
 }
 
@@ -30,14 +30,14 @@ function showElementById(elementId) {
     element.classList.remove('hidden');
 }
 
-
-
-let seatLeft= getTextElementValueById('seatLeft');
+let seatLeft= getElementTextById('seatLeft');
 const seats = document.getElementsByClassName("seat");
 const tbody = document.getElementById("tbody");
 let count= 0;
+let price=0;
 for(let seat of seats){
     
+            
     
     seat.addEventListener('click', function(){
         count +=1;
@@ -46,13 +46,17 @@ for(let seat of seats){
         
         
         if(count<=4){
-            
+            price+=550;
             seatLeft -=1;
-            setTextElementValueById('seatLeft', seatLeft)
+            setTextElementValueById('totalPrice', price); 
+            setTextElementValueById('grandTotal', price);
+            setTextElementValueById('seatLeft', seatLeft);
             const seatId= seat.innerText;
             setBackgroundColorById(seatId);
 
             setTextElementValueById('selectedSeat', count)
+            const selectedSeat=document.getElementById('selectedSeat')
+            selectedSeat.classList.add('bg-green-400')
 
             let tr=document.createElement('tr');
             let td1=document.createElement('td');
@@ -73,3 +77,36 @@ for(let seat of seats){
         
     })
 }
+
+
+
+const apply= document.getElementById('apply');
+
+apply.addEventListener('click', function(){
+    const cupon = getElementValueById('cupon');
+    if(cupon==='NEW15'){
+        const grandTotal = parseFloat(getElementTextById('grandTotal'));
+        let discount =grandTotal*0.15;
+        let newGrandTotal=grandTotal-discount
+        setTextElementValueById('grandTotal', newGrandTotal);
+        setTextElementValueById('discountPrice', discount);
+        hideElementById('hide');
+        showElementById('show');
+        
+    }else if(cupon==='Couple 20'){
+        const grandTotal = parseFloat(getElementTextById('grandTotal'));
+        let discount =grandTotal*0.2;
+        let newGrandTotal=grandTotal-discount;
+        setTextElementValueById('grandTotal', newGrandTotal);
+        setTextElementValueById('discountPrice', discount);
+        hideElementById('hide');
+        showElementById('show');
+    }else{
+        alert('Invalid cupon')
+    }
+})
+
+
+//     const cupon =getTextElementValueById('cupon');
+//     console.log(grandTotal)
+
