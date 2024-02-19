@@ -111,3 +111,10 @@ apply.addEventListener('click', function(){
         alert('Invalid cupon')
     }
 })
+
+const next=document.getElementById('next');
+const number=document.getElementById('number').addEventListener('keyup', function(e){
+    next.removeAttribute('disabled');
+})
+
+
