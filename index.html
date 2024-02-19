@@ -169,7 +169,7 @@
                             </div>
                             <div class="flex space-x-4">
                                 <img src="images/seat-green-filled.png" alt="">
-                                <p>Available</p>
+                                <p>Selected</p>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -227,22 +227,18 @@
                                   <!-- head -->
                                   <thead>
                                     <tr>
-                                      <th>Name</th>
-                                      <th>Job</th>
-                                      <th>Favorite Color</th>
+                                      <th>Seat <span id="selectedSeat"></span></th>
+                                      <th>Class</th>
+                                      <th>Price</th>
                                     </tr>
                                   </thead>
-                                  <tbody>
+                                  <tbody id="tbody">
                                     <!-- row 1 -->
-                                    <tr>
-                                      <td>Cy Ganderton</td>
-                                      <td>Quality Control Specialist</td>
-                                      <td>Blue</td>
-                                    </tr>
+                                    
                                   </tbody>
                                 </table>
                               </div>
-                              <div class="flex justify-between my-3 font-bold">
+                              <div class="flex justify-between my-4 font-bold">
                                 <h4>Total Price</h4>
                                 <h4>BDT <span><span></h4>
                               </div>
@@ -252,26 +248,26 @@
                                     <button class="btn bg-green-400">Apply</button>
                                   </label>
                               </div>
-                              <div class="flex justify-between my-3 font-bold">
+                              <div class="flex justify-between mt-4 font-bold">
                                 <h4>Grand Total</h4>
                                 <h4>BDT <span><span></h4>
                               </div>
                         </div>
                        </div>
-                       <div class="my-5">
+                       <div class="mt-8">
                         <form class="flex flex-col " action="">
                             <label class="text-xl mb-4 font-bold" for="">Passenger Name*</label>
-                            <input type="text" placeholder="Enter your name" class="input bg-[#13131808] rounded-2xl w-full " /><br><br>
+                            <input type="text" placeholder="Enter your name" class="input bg-[#13131808] rounded-2xl w-full " /><br>
                             <label class="text-xl mb-4 font-bold" for=""> Phone Number*</label>
-                            <input type="text" placeholder="Enter Your Phone Number" class="input bg-[#13131808] rounded-2xl w-full " /><br><br>
+                            <input type="text" placeholder="Enter Your Phone Number" class="input bg-[#13131808] rounded-2xl w-full " /><br>
                             <label class="text-xl mb-4 font-bold" for=""> Email ID</label>
-                            <input type="email" placeholder="Enter Your Email Id" class="input bg-[#13131808] rounded-2xl w-full " /><br><br>
+                            <input type="email" placeholder="Enter Your Email Id" class="input bg-[#13131808] rounded-2xl w-full " /><br>
                             <button class="btn btn-success border-none text-white bg-[#1dd100] w-full">Send Message</button>
                         </form>
                        </div>
-                       <div class="flex justify-around">
-                            <h4>Grand Total</h4>
-                            <h4>BDT <span><span></h4>
+                       <div class="flex mt-3 underline justify-around">
+                            <a> Terms and Conditions</a>
+                            <a>Cancellation Policy</a>
                       </div>
                     </div>
                 </div>
