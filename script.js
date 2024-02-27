@@ -69,11 +69,7 @@ for(let seat of seats){
             tr.appendChild(td2);
             tr.appendChild(td3);
             tbody.appendChild(tr);
-
-            // td1.classList.add('same')
             
-            
-
         }
 
         seat.disabled=true;
